@@ -32,6 +32,14 @@ export const Header = () => {
               underline="none"
             >About</Link>
           </Grid>
+          <Grid item lg={1}>
+            <Link
+              href="/contact"
+              variant="h6"
+              color="inherit"
+              underline="none"
+            >Contact</Link>
+          </Grid>
         </Grid>
       </Container>
     </Container>

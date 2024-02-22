@@ -6,8 +6,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './theme';
-import { AboutPage } from './pages';
+import { AboutPage, ContactPage } from './pages';
 import { Header, Footer } from './components';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,17 +17,20 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/*" element={<App />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Header />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/*" element={<App />} />
+          </Routes>
+        </BrowserRouter>
+        <Footer />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 
