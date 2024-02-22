@@ -1,4 +1,4 @@
-import { Container, Grid, styled, useTheme } from "@mui/material"
+import { Container, Grid, Link, styled, useTheme } from "@mui/material"
 
 export const Header = () => {
   const theme = useTheme()
@@ -16,8 +16,21 @@ export const Header = () => {
     >
       <Container maxWidth={'xl'} disableGutters>
         <Grid container>
-          <Grid item>
-            Header
+          <Grid item lg={1}>
+            <Link
+              href="/"
+              variant="h6"
+              color="inherit"
+              underline="none"
+            >Home</Link>
+          </Grid>
+          <Grid item lg={1}>
+            <Link
+              href="/about"
+              variant="h6"
+              color="inherit"
+              underline="none"
+            >About</Link>
           </Grid>
         </Grid>
       </Container>

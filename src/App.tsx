@@ -6,7 +6,6 @@ import { Footer, Header } from './components';
 function App() {
   return (
     <>
-      <Header />
       <Container maxWidth="xl" component='main'>
         <Box sx={{ my: 4 }}>
           <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
@@ -14,7 +13,6 @@ function App() {
           </Typography>
         </Box>
       </Container>
-      <Footer />
     </>
   );
 }

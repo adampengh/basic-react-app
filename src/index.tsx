@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './theme';
+import { AboutPage } from './pages';
+import { Header, Footer } from './components';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +17,14 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App />
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/*" element={<App />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </ThemeProvider>
   </React.StrictMode>
 );
